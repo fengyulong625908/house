@@ -51,6 +51,19 @@ public class UserController {
         }
     }
 
+    @RequestMapping("/login2")
+    @ResponseBody
+    public int login(HttpSession session,String inputCode) {
 
-
+      if (session.getAttribute("users")!=null){
+         String code = (String) session.getAttribute("code");
+         if (inputCode.equals(code)){
+             return 1;
+         }else {
+             return 0;
+         }
+      }else {
+          return 0;
+      }
+    }
 }

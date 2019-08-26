@@ -34,7 +34,11 @@ public interface UsersService {
      */
     Users login(String userName,String password);
 
-
-
+    /**
+     * 手机号登录
+     * @param tel 手机号
+     * @return
+     */
+    Users login(String tel);
 
 }

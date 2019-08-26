@@ -20,7 +20,8 @@ public class loginFilter implements Filter {
                 path.equals("selectStreetAllByDid")||
                 path.equals("selectTypeAll")||
                 path.equals("getHouseByCondition")||
-                path.equals("getHouse")
+                path.equals("getHouse")||
+                path.equals("getCode")
         ){
             chain.doFilter(req, resp);
         }else {
