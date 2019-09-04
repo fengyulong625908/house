@@ -25,7 +25,6 @@ public class StreetController {
     public List<Street> selectAll(Integer did){
 
         List<Street> streets = service.selectStreetByDid(did);
-        System.out.println(streets.size());
         return streets;
     }
 

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
@@ -57,5 +58,15 @@ public class TypeController {
     @ResponseBody
     public int deleteTypes(Integer [] ids){
         return service.deleteTypes(ids);
+    }
+
+
+    @RequestMapping("/selectTypeAll2")
+    @ResponseBody
+    public List<Type> selectAll2(){
+
+        List<Type> types = service.selectTypeALL();
+        return types;
+
     }
 }

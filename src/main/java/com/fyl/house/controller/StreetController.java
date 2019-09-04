@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
@@ -77,5 +78,14 @@ public class StreetController {
             e.printStackTrace();
         }
         return i;
+    }
+
+
+    @RequestMapping("/selectStreetAllByDid2")
+    @ResponseBody
+    public List<Street> selectAll2(Integer did){
+
+        List<Street> streets = service.selectStreetByDid(did);
+        return streets;
     }
 }

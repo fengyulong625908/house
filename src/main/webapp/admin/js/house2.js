@@ -1,5 +1,5 @@
 $(function(){
-    $.post("/page/selectTypeAll",null,function (data) {
+    $.post("/selectTypeAll2",null,function (data) {
         for(var i=0;i<data.length;i++){
             //创建节点
             var node=$("<option value='"+data[i].id+"'>"+data[i].name+"</option>");
@@ -9,7 +9,7 @@ $(function(){
     },"json");
 
     //1.发送异步请求获取区域，进行显示
-    $.post("/page/selectDistrictAll",null,function (data) {
+    $.post("/selectDistrictAll2",null,function (data) {
         for(var i=0;i<data.length;i++){
             //创建节点
             var node=$("<option value='"+data[i].id+"'>"+data[i].name+"</option>");
@@ -30,7 +30,7 @@ $(function(){
             //发送异步请求加载街道数据
             //清空原有数据项
             $("#street_id>option:gt(0)").remove();
-            $.post("/page/selectStreetAllByDid", {"did": did}, function (data) {
+            $.post("/selectStreetAllByDid2", {"did": did}, function (data) {
 
                 for (var i = 0; i < data.length; i++) {
                     //创建节点
